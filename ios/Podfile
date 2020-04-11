@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'openFeed' do
-  # Pods for openFeed
+target 'ecommerce' do
+  # Pods for ecommerce
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,10 @@ target 'openFeed' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'openFeedTests' do
+
+
+
+  target 'ecommerceTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +97,10 @@ target 'openFeed' do
   end
 end
 
-target 'openFeed-tvOS' do
-  # Pods for openFeed-tvOS
+target 'ecommerce-tvOS' do
+  # Pods for ecommerce-tvOS
 
-  target 'openFeed-tvOSTests' do
+  target 'ecommerce-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

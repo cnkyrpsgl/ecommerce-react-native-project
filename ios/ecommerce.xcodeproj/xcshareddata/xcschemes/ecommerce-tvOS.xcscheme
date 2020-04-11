@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "openFeed-tvOS.app"
-               BlueprintName = "openFeed-tvOS"
-               ReferencedContainer = "container:openFeed.xcodeproj">
+               BuildableName = "ecommerce-tvOS.app"
+               BlueprintName = "ecommerce-tvOS"
+               ReferencedContainer = "container:ecommerce.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "openFeed-tvOSTests.xctest"
-               BlueprintName = "openFeed-tvOSTests"
-               ReferencedContainer = "container:openFeed.xcodeproj">
+               BuildableName = "ecommerce-tvOSTests.xctest"
+               BlueprintName = "ecommerce-tvOSTests"
+               ReferencedContainer = "container:ecommerce.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "openFeed-tvOS.app"
-            BlueprintName = "openFeed-tvOS"
-            ReferencedContainer = "container:openFeed.xcodeproj">
+            BuildableName = "ecommerce-tvOS.app"
+            BlueprintName = "ecommerce-tvOS"
+            ReferencedContainer = "container:ecommerce.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "openFeed-tvOS.app"
-            BlueprintName = "openFeed-tvOS"
-            ReferencedContainer = "container:openFeed.xcodeproj">
+            BuildableName = "ecommerce-tvOS.app"
+            BlueprintName = "ecommerce-tvOS"
+            ReferencedContainer = "container:ecommerce.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
