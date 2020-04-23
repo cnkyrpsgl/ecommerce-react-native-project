@@ -4,7 +4,8 @@ import {Button, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ProfileStackScreen from './modules/profile/navigator';
 
 function DetailsScreen() {
   return (
@@ -26,18 +27,6 @@ function HomeScreen({navigation}: {navigation: any}) {
   );
 }
 
-function SettingsScreen({navigation}: {navigation: any}) {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
-
 const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
@@ -49,40 +38,64 @@ function HomeStackScreen() {
   );
 }
 
-const SettingsStack = createStackNavigator();
-
-function SettingsStackScreen() {
-  return (
-    <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Settings" component={SettingsScreen} />
-      <SettingsStack.Screen name="Details" component={DetailsScreen} />
-    </SettingsStack.Navigator>
-  );
-}
-
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        initialRouteName={'Home'}
+        backBehavior={'none'}
+        activeColor={'white'}
+        inactiveColor={'white'}
+        barStyle={{backgroundColor: 'orange'}}>
         <Tab.Screen
           name="Home"
           component={HomeStackScreen}
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({color}) => (
-              <Icon name="home" color={color} size={26} />
+              <MaterialIcon name="home-outline" color={color} size={26} />
             )
           }}
         />
         <Tab.Screen
-          name="Settings"
-          component={SettingsStackScreen}
+          name="Products"
+          component={HomeStackScreen}
           options={{
-            tabBarLabel: 'Settings',
+            tabBarLabel: 'Products',
             tabBarIcon: ({color}) => (
-              <Icon name="settings" color={color} size={26} />
+              <MaterialIcon name="view-list" color={color} size={26} />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Cart"
+          component={ProfileStackScreen}
+          options={{
+            tabBarLabel: 'Cart',
+            tabBarIcon: ({color}) => (
+              <MaterialIcon name="cart-outline" color={color} size={26} />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Campaigns"
+          component={ProfileStackScreen}
+          options={{
+            tabBarLabel: 'Campaigns',
+            tabBarIcon: ({color}) => (
+              <MaterialIcon name="bullhorn-outline" color={color} size={26} />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileStackScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({color}) => (
+              <MaterialIcon name="account-outline" color={color} size={26} />
             )
           }}
         />
