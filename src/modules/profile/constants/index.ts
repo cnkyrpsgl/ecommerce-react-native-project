@@ -16,3 +16,10 @@ export const addressData = [
     detail: '20 Medical St #APT A13, Altoona, AL, 35952'
   }
 ];
+
+export const paymentData = [
+  {
+    cardName: 'American Express',
+    cardNumber: '1234567812345678'
+  }
+];

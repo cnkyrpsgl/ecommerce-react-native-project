@@ -14,27 +14,42 @@ function ProfileStackScreen() {
       <ProfileStack.Screen
         name="Profile"
         component={ProfileScene}
-        options={{headerTintColor: 'orange'}}
+        options={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }}
       />
       <ProfileStack.Screen
         name="Account"
         component={AccountScene}
-        options={{headerTintColor: 'orange'}}
+        options={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }}
       />
       <ProfileStack.Screen
         name="Address"
         component={AddressScene}
-        options={{headerTintColor: 'orange'}}
+        options={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }}
       />
       <ProfileStack.Screen
         name="Payment"
         component={PaymentScene}
-        options={{headerTintColor: 'orange'}}
+        options={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }}
       />
       <ProfileStack.Screen
         name="History"
         component={HistoryScene}
-        options={{headerTintColor: 'orange'}}
+        options={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }}
       />
     </ProfileStack.Navigator>
   );
