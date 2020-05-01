@@ -8,6 +8,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ProfileStackScreen from './modules/profile/navigator';
 import CampaingStackScreen from './modules/campaign/navigator';
 import CartStackScreen from './modules/cart/navigator';
+import SearchStackScreen from './modules/search/navigator';
 
 function DetailsScreen() {
   return (
@@ -64,12 +65,12 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name="Products"
-            component={HomeStackScreen}
+            name="Search"
+            component={SearchStackScreen}
             options={{
-              tabBarLabel: 'Products',
+              tabBarLabel: 'Search',
               tabBarIcon: ({color}) => (
-                <MaterialIcon name="view-list" color={color} size={26} />
+                <MaterialIcon name="magnify" color={color} size={26} />
               )
             }}
           />

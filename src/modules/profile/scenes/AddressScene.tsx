@@ -14,9 +14,9 @@ const AddressScene = () => {
         <Text style={{fontWeight: 'bold', fontSize: 20}}>My Addresses</Text>
       </View>
       {addressData.map((address) => (
-        <AddressCard {...address} />
+        <AddressCard {...address} key={address.title} />
       ))}
-      <ActionButton title={'Add New Address'} />
+      <ActionButton title={'Add New Address'} action={() => {}} />
     </View>
   );
 };
