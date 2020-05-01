@@ -3,7 +3,7 @@ import {FlatList, View} from 'react-native';
 import profileSceneStyles from '../styles/ProfileSceneStyles';
 import {profileMenuData} from '../constants';
 import ProfileMenuItem from '../components/ProfileMenuItem';
-import ProfileMenuActionButton from '../components/ProfileMenuActionButton';
+import ActionButton from '../../../common/components/ActionButton';
 
 const ProfileScene = ({navigation}: {navigation: any}) => {
   return (
@@ -22,7 +22,7 @@ const ProfileScene = ({navigation}: {navigation: any}) => {
           flex: 1
         }}
       />
-      <ProfileMenuActionButton title={'Log Out'} />
+      <ActionButton title={'Log Out'} action={() => {}} />
     </View>
   );
 };

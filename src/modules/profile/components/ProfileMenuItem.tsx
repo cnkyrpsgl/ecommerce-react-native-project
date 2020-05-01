@@ -27,9 +27,9 @@ const ProfileMenuItem = ({
           justifyContent: 'space-between',
           marginHorizontal: '3%'
         }}>
-        <MaterialIcon name={icon} size={26} />
-        <Text style={{fontSize: 15}}>{title}</Text>
-        <MaterialIcon name="chevron-right" size={26} />
+        <MaterialIcon name={icon} size={26} color={'orange'} />
+        <Text style={{fontSize: 15, color: '#f08a5d'}}>{title}</Text>
+        <MaterialIcon name="chevron-right" size={26} color={'orange'} />
       </View>
     </TouchableOpacity>
   );

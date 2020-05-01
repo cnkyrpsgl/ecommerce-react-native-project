@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {addressData} from '../constants';
 import AddressCard from '../components/AddressCard';
-import ProfileMenuActionButton from '../components/ProfileMenuActionButton';
+import ActionButton from '../../../common/components/ActionButton';
 
 const AddressScene = () => {
   return (
@@ -16,7 +16,7 @@ const AddressScene = () => {
       {addressData.map((address) => (
         <AddressCard {...address} />
       ))}
-      <ProfileMenuActionButton title={'Add New Address'} />
+      <ActionButton title={'Add New Address'} />
     </View>
   );
 };

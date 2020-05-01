@@ -1,10 +1,16 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {GestureResponderEvent, Text, TouchableOpacity} from 'react-native';
 
-const ProfileMenuActionButton = ({title}: {title: string}) => {
+const ActionButton = ({
+  title,
+  action
+}: {
+  title: string;
+  action: (event: GestureResponderEvent) => void;
+}) => {
   return (
     <TouchableOpacity
-      onPress={() => {}}
+      onPress={action}
       style={{
         justifyContent: 'center',
         alignItems: 'center',
@@ -20,4 +26,4 @@ const ProfileMenuActionButton = ({title}: {title: string}) => {
   );
 };
 
-export default ProfileMenuActionButton;
+export default ActionButton;
