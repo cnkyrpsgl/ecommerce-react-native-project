@@ -4,6 +4,7 @@ import {ScrollView, useWindowDimensions} from 'react-native';
 import ProductCategory from '../components/ProductCategory';
 import {carouselData} from '../constants';
 import CarouselCard from '../components/CarouselCard';
+import styles from '../styles/PaginationStyles';
 
 const HomeScene = () => {
   const windowWidth = useWindowDimensions().width;
@@ -26,13 +27,7 @@ const HomeScene = () => {
       <Pagination
         dotsLength={carouselData.length}
         activeDotIndex={activeSlide}
-        dotStyle={{
-          width: 10,
-          height: 10,
-          borderRadius: 5,
-          marginHorizontal: 8,
-          backgroundColor: 'white'
-        }}
+        dotStyle={styles.dot}
         inactiveDotColor="red"
         dotColor="red"
         inactiveDotOpacity={0.4}

@@ -2,15 +2,11 @@ import React from 'react';
 import {View} from 'react-native';
 import {categoryData} from '../constants';
 import CategoryCard from './CategoryCard';
+import styles from '../styles/ProductCategoryStyles';
 
 const ProductCategory = () => {
   return (
-    <View
-      style={{
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        justifyContent: 'center'
-      }}>
+    <View style={styles.container}>
       {categoryData.map((category) => (
         <CategoryCard {...category} key={category.categoryName} />
       ))}

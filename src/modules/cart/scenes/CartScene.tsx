@@ -4,16 +4,12 @@ import EmptyCardNote from '../components/EmptyCardNote';
 import ActionButton from '../../../common/components/ActionButton';
 import {cartData} from '../constants';
 import CartItem from '../components/CartItem';
+import styles from '../styles/CartSceneStyles';
 
 const CartScene = ({navigation}: {navigation: any}) => {
   const navigateToHome = () => navigation.navigate('Home');
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'space-between',
-        marginHorizontal: '5%'
-      }}>
+    <View style={styles.container}>
       {cartData.length > 0 ? (
         <FlatList
           data={cartData}

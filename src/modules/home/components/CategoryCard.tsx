@@ -1,5 +1,6 @@
 import React from 'react';
 import {Image, ImageSourcePropType, Text, View} from 'react-native';
+import styles from '../styles/CategoryCardStyles';
 
 const CategoryCard = ({
   urlSource,
@@ -9,15 +10,8 @@ const CategoryCard = ({
   categoryName: string;
 }) => {
   return (
-    <View
-      style={{
-        borderRadius: 8,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        margin: '2%',
-        padding: '2%'
-      }}>
-      <Image source={urlSource} style={{width: 90, height: 80}} />
+    <View style={styles.container}>
+      <Image source={urlSource} style={styles.image} />
       <Text>{categoryName}</Text>
     </View>
   );

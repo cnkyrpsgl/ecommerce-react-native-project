@@ -2,22 +2,17 @@ import React from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {popularData} from '../constants';
 import PopularProduct from './PopularProduct';
+import styles from '../scenes/PopularSearchStyles';
 
 const PopularSearch = () => {
   return (
-    <View style={{marginVertical: '5%'}}>
-      <Text style={{color: '#f08a5d', marginHorizontal: '3%'}}>
-        Popular Searches
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Popular Searches</Text>
       <FlatList
         data={popularData}
         horizontal={true}
-        style={{
-          backgroundColor: 'white',
-          paddingVertical: '5%',
-          marginVertical: '3%'
-        }}
-        contentContainerStyle={{marginHorizontal: '3%'}}
+        style={styles.flatList}
+        contentContainerStyle={styles.contentContainer}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({item}) => <PopularProduct {...item} />}
       />

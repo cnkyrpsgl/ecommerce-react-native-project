@@ -1,6 +1,7 @@
 import React from 'react';
 import {ImageSourcePropType, View, Text, Image} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from '../styles/CartItemStyles';
 
 const CartItem = ({
   productName,
@@ -14,45 +15,28 @@ const CartItem = ({
   urlSource: ImageSourcePropType;
 }) => {
   return (
-    <View
-      style={{
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: 'white',
-        flexDirection: 'row',
-        borderRadius: 10,
-        marginTop: '3%'
-      }}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View style={{padding: '10%'}}>
-          <Image source={urlSource} style={{width: 50, height: 50}} />
+    <View style={styles.container}>
+      <View style={styles.productContainer}>
+        <View style={styles.imageContainer}>
+          <Image source={urlSource} style={styles.image} />
         </View>
-        <View style={{height: 50, justifyContent: 'space-between'}}>
+        <View style={styles.textContainer}>
           <Text>{productName}</Text>
-          <Text style={{fontWeight: 'bold'}}>{`${unitPrice} $`}</Text>
+          <Text style={styles.price}>{`${unitPrice} $`}</Text>
         </View>
       </View>
-      <View
-        style={{
-          borderRadius: 10,
-          borderWidth: 1,
-          borderColor: 'orange',
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          marginRight: '3%'
-        }}>
+      <View style={styles.amountContainer}>
         <MaterialIcon
           name="minus"
           size={20}
-          style={{margin: '2%'}}
+          style={styles.minus}
           color={'red'}
         />
-        <Text style={{fontWeight: 'bold'}}>{amount}</Text>
+        <Text style={styles.amount}>{amount}</Text>
         <MaterialIcon
           name="plus"
           size={20}
-          style={{margin: '2%'}}
+          style={styles.plus}
           color={'green'}
         />
       </View>

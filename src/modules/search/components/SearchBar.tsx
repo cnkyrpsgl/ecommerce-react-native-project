@@ -1,21 +1,16 @@
 import React from 'react';
 import {TextInput, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from '../scenes/SearchBarStyles';
 
 const SearchBar = () => {
   return (
-    <View
-      style={{
-        backgroundColor: 'white',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View style={styles.container}>
+      <View style={styles.searchContainer}>
         <MaterialIcon
           name="magnify"
           size={30}
-          style={{margin: '4%'}}
+          style={styles.search}
           color={'orange'}
         />
         <TextInput placeholder={'Search Product'} />
@@ -24,7 +19,7 @@ const SearchBar = () => {
         <MaterialIcon
           name="microphone-outline"
           size={30}
-          style={{margin: '2%'}}
+          style={styles.microphone}
           color={'orange'}
         />
       </View>
