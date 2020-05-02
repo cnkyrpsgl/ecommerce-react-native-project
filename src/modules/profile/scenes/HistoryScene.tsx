@@ -1,11 +1,17 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View, FlatList} from 'react-native';
+import {orderHistoryData} from '../constants';
+import HistoryCard from '../components/HistoryCard';
 
 const HistoryScene = () => {
   return (
-    <>
-      <Text>History</Text>
-    </>
+    <View>
+      <FlatList
+        data={orderHistoryData}
+        keyExtractor={(_, index) => index.toString()}
+        renderItem={({item}) => <HistoryCard {...item} />}
+      />
+    </View>
   );
 };
 

@@ -23,3 +23,29 @@ export const paymentData = [
     cardNumber: '123456********78'
   }
 ];
+
+export enum AddressType {
+  home = 'Home',
+  work = 'Work'
+}
+
+export const orderHistoryData = [
+  {
+    date: '26/02/2020 17:15',
+    skuAmount: 16,
+    cartPrice: 46.75,
+    addressType: AddressType.home
+  },
+  {
+    date: '03/03/2020 11:32',
+    skuAmount: 12,
+    cartPrice: 33.5,
+    addressType: AddressType.work
+  },
+  {
+    date: '15/04/2020 21:50',
+    skuAmount: 21,
+    cartPrice: 53.9,
+    addressType: AddressType.home
+  }
+];
