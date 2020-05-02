@@ -1,7 +1,8 @@
 import React from 'react';
 import {TextInput} from 'react-native-paper';
-import {TouchableOpacity, View, Text} from 'react-native';
+import {View} from 'react-native';
 import {Formik} from 'formik';
+import BoldActionButton from '../../../common/components/BoldActionButton';
 
 interface UserUpdateRequest {
   name: string;
@@ -58,17 +59,7 @@ const AccountScene = () => {
               justifyContent: 'center',
               marginHorizontal: '10%'
             }}>
-            <TouchableOpacity
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginHorizontal: '20%',
-                height: 60,
-                borderRadius: 8,
-                backgroundColor: 'orange'
-              }}>
-              <Text style={{fontSize: 15, color: 'white'}}>Save</Text>
-            </TouchableOpacity>
+            <BoldActionButton name={'Save'} />
           </View>
         </>
       )}

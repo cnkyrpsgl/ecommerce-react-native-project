@@ -20,6 +20,6 @@ export const addressData = [
 export const paymentData = [
   {
     cardName: 'American Express',
-    cardNumber: '1234567812345678'
+    cardNumber: '123456********78'
   }
 ];
