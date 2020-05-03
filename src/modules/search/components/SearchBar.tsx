@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput, View} from 'react-native';
+import {TextInput, TouchableOpacity, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/SearchBarStyles';
 
@@ -15,14 +15,14 @@ const SearchBar = () => {
         />
         <TextInput placeholder={'Search Product'} />
       </View>
-      <View>
+      <TouchableOpacity>
         <MaterialIcon
           name="microphone-outline"
           size={30}
           style={styles.microphone}
           color={'orange'}
         />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };

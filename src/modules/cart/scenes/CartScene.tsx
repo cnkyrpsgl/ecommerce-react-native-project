@@ -1,11 +1,13 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {View} from 'react-native';
 import EmptyCardNote from '../components/EmptyCardNote';
 import ActionButton from '../../../common/components/ActionButton';
 import CartItem from '../components/CartItem';
 import styles from '../styles/CartSceneStyles';
 import {useSelector} from 'react-redux';
 import {cartSelectors} from '../../../core/cart/stores';
+import {SwipeListView} from 'react-native-swipe-list-view';
+import SwipeBackItem from '../components/SwipeBackItem';
 
 const CartScene = ({navigation}: {navigation: any}) => {
   const {cart} = useSelector(cartSelectors);
@@ -14,10 +16,17 @@ const CartScene = ({navigation}: {navigation: any}) => {
   return (
     <View style={styles.container}>
       {cartData.length > 0 ? (
-        <FlatList
+        <SwipeListView
+          keyExtractor={(_, index: number) => index.toString()}
+          useFlatList={true}
           data={cartData}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({item}) => <CartItem {...item} />}
+          renderItem={(rowData) => <CartItem {...rowData.item} />}
+          renderHiddenItem={SwipeBackItem}
+          rightOpenValue={-75}
+          disableRightSwipe
+          stopRightSwipe={-75}
+          closeOnRowOpen={false}
+          closeOnScroll={false}
         />
       ) : (
         <>
