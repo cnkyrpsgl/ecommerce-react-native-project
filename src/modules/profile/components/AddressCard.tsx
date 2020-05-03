@@ -1,15 +1,28 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {
+  GestureResponderEvent,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/AddressCardStyles';
 
-const AddressCard = ({title, detail}: {title: string; detail: string}) => {
+const AddressCard = ({
+  title,
+  detail,
+  editAction
+}: {
+  title: string;
+  detail: string;
+  editAction: (event: GestureResponderEvent) => void;
+}) => {
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.actionContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={editAction}>
             <MaterialIcon name="pencil-outline" size={24} color={'orange'} />
           </TouchableOpacity>
           <TouchableOpacity>

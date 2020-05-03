@@ -5,6 +5,7 @@ import AccountScene from './scenes/AccountScene';
 import HistoryScene from './scenes/HistoryScene';
 import AddressScene from './scenes/AddressScene';
 import PaymentScene from './scenes/PaymentScene';
+import AddressEditScene from './scenes/AddressEditScene';
 
 const ProfileStack = createStackNavigator();
 
@@ -30,6 +31,14 @@ function ProfileStackScreen() {
       <ProfileStack.Screen
         name="Address"
         component={AddressScene}
+        options={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }}
+      />
+      <ProfileStack.Screen
+        name="Edit Address"
+        component={AddressEditScene}
         options={{
           headerTintColor: 'white',
           headerStyle: {backgroundColor: 'orange'}
