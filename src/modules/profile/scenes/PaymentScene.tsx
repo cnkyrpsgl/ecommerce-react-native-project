@@ -1,18 +1,20 @@
 import React from 'react';
 import {View} from 'react-native';
-import {paymentData} from '../constants';
 import PaymentCard from '../components/PaymentCard';
-import BoldActionButton from '../../../common/components/BoldActionButton';
+import DarkActionButton from '../../../common/components/DarkActionButton';
 import styles from '../styles/PaymentSceneStyles';
+import {useSelector} from 'react-redux';
+import {paymentSelectors} from '../../../core/payment/stores';
 
 const PaymentScene = () => {
+  const {paymentMap} = useSelector(paymentSelectors);
   return (
     <View style={styles.container}>
-      {paymentData.map((payment, index) => (
+      {Object.values(paymentMap).map((payment, index) => (
         <PaymentCard {...payment} key={index.toString()} />
       ))}
       <View style={styles.actionContainer}>
-        <BoldActionButton name={'Add New Card'} />
+        <DarkActionButton name={'Add New Card'} />
       </View>
     </View>
   );

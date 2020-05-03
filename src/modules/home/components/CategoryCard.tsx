@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ImageSourcePropType, Text, View} from 'react-native';
+import {Image, ImageSourcePropType, Text, TouchableOpacity} from 'react-native';
 import styles from '../styles/CategoryCardStyles';
 
 const CategoryCard = ({
@@ -10,10 +10,10 @@ const CategoryCard = ({
   categoryName: string;
 }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Image source={urlSource} style={styles.image} />
       <Text>{categoryName}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

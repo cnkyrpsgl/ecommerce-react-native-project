@@ -1,8 +1,25 @@
 import {EnhancedStore} from '@reduxjs/toolkit';
 import {SagaMiddleware, Saga} from 'redux-saga';
 import {cancel, fork, take} from 'redux-saga/effects';
+import {categorySagas} from '../category/stores';
+import {campaignSagas} from '../campaign/stores';
+import {searchSagas} from '../search/stores';
+import {cartSagas} from '../cart/stores';
+import {identitySagas} from '../identity/stores';
+import {addressSagas} from '../address/stores';
+import {paymentSagas} from '../payment/stores';
+import {historySagas} from '../history/stores';
 
-const rootSagas: Saga[][] = [];
+const rootSagas: Saga[][] = [
+  categorySagas,
+  campaignSagas,
+  searchSagas,
+  cartSagas,
+  identitySagas,
+  addressSagas,
+  paymentSagas,
+  historySagas
+];
 
 export const CANCEL_SAGAS_HMR = 'CANCEL_SAGAS_HMR';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 
-const BoldActionButton = ({name}: {name: string}) => {
+const DarkActionButton = ({name}: {name: string}) => {
   return (
     <TouchableOpacity
       style={{
@@ -17,4 +17,4 @@ const BoldActionButton = ({name}: {name: string}) => {
   );
 };
 
-export default BoldActionButton;
+export default DarkActionButton;

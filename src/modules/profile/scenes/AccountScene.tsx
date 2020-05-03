@@ -2,20 +2,32 @@ import React from 'react';
 import {TextInput} from 'react-native-paper';
 import {View} from 'react-native';
 import {Formik} from 'formik';
-import BoldActionButton from '../../../common/components/BoldActionButton';
+import DarkActionButton from '../../../common/components/DarkActionButton';
 import styles from '../styles/AccountSceneStyles';
+import {useSelector} from 'react-redux';
+import {identitySelectors} from '../../../core/identity/stores';
+import {User} from '../../../core/identity/stores/identityTypes';
+import {number, object, string} from 'yup';
 
-interface UserUpdateRequest {
-  name: string;
-  lastName: string;
-  email: string;
-  phoneNumber: number;
-}
+const validationSchema = object().shape<User>({
+  id: number().required(),
+  name: string().required('Lütfen adınızı giriniz'),
+  lastName: string().required('Lütfen soyadınızı giriniz'),
+  email: string()
+    .email('Email formatını kontrol ediniz')
+    .required('Lütfen email adresinizi giriniz'),
+  phoneNumber: string()
+    .min(10, 'Telefon numarası 10 karakterden oluşmalıdır')
+    .max(10, 'Telefon numarası 10 karakterden oluşmalıdır')
+    .required('Lütfen telefon numarasını giriniz')
+});
 
 const AccountScene = () => {
+  const {user} = useSelector(identitySelectors);
   return (
-    <Formik<UserUpdateRequest>
-      initialValues={{name: '', lastName: '', email: '', phoneNumber: 0}}
+    <Formik<User>
+      validationSchema={validationSchema}
+      initialValues={{...user}}
       onSubmit={() => {}}>
       {() => (
         <>
@@ -26,6 +38,7 @@ const AccountScene = () => {
               placeholder="Please enter your name here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
+              value={user.name}
             />
             <TextInput
               mode="outlined"
@@ -33,6 +46,7 @@ const AccountScene = () => {
               placeholder="Please enter your surname here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
+              value={user.lastName}
             />
             <TextInput
               mode="outlined"
@@ -40,6 +54,7 @@ const AccountScene = () => {
               placeholder="Please enter your email here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
+              value={user.email}
             />
             <TextInput
               mode="outlined"
@@ -47,10 +62,11 @@ const AccountScene = () => {
               placeholder="Please enter your phone number here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
+              value={user.phoneNumber}
             />
           </View>
           <View style={styles.actionContainer}>
-            <BoldActionButton name={'Save'} />
+            <DarkActionButton name={'Save'} />
           </View>
         </>
       )}

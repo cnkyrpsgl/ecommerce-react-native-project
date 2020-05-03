@@ -87,18 +87,18 @@ export const categoryData = [
 
 export const carouselData = [
   {
-    urlSource: require('../assets/carousel1.jpg')
+    imgSource: require('../assets/carousel1.jpg')
   },
   {
-    urlSource: require('../assets/carousel2.jpg')
+    imgSource: require('../assets/carousel2.jpg')
   },
   {
-    urlSource: require('../assets/carousel3.jpg')
+    imgSource: require('../assets/carousel3.jpg')
   },
   {
-    urlSource: require('../assets/carousel4.jpg')
+    imgSource: require('../assets/carousel4.jpg')
   },
   {
-    urlSource: require('../assets/carousel5.jpg')
+    imgSource: require('../assets/carousel5.jpg')
   }
 ];

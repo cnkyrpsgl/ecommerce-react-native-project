@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {AddressType} from '../constants';
 import styles from '../styles/HistoryCardStyles';
+import {AddressType} from '../../../core/address/stores/addressTypes';
 
 const HistoryCard = ({
   date,
@@ -32,14 +32,14 @@ const HistoryCard = ({
         </View>
       </View>
       <View style={styles.actionContainer}>
-        <View style={styles.amountContainer}>
+        <TouchableOpacity style={styles.amountContainer}>
           <View style={styles.basketContainer}>
             <MaterialIcon name="basket" size={25} color={'#A2CD37'} />
           </View>
           <View style={styles.priceContainer}>
             <Text style={styles.price}>{`$${cartPrice}`}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
         <MaterialIcon name="chevron-right" size={35} color={'orange'} />
       </View>
     </View>

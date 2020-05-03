@@ -1,16 +1,18 @@
 import React from 'react';
 import {FlatList, View} from 'react-native';
-import {campaignData} from '../constants';
 import CampaignCard from '../components/CampaignCard';
 import styles from '../styles/CampaingSceneStyles';
+import {useSelector} from 'react-redux';
+import {campaignSelectors} from '../../../core/campaign/stores';
 
 const CampaignScene = () => {
+  const {campaigns} = useSelector(campaignSelectors);
   return (
     <View style={styles.container}>
       <FlatList
-        data={campaignData}
+        data={campaigns}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({item}) => <CampaignCard imgSource={item} />}
+        renderItem={({item}) => <CampaignCard {...item} />}
       />
     </View>
   );

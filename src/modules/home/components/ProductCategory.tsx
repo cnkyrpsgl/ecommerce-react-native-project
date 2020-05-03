@@ -1,13 +1,15 @@
 import React from 'react';
 import {View} from 'react-native';
-import {categoryData} from '../constants';
 import CategoryCard from './CategoryCard';
 import styles from '../styles/ProductCategoryStyles';
+import {useSelector} from 'react-redux';
+import {categorySelectors} from '../../../core/category/stores';
 
 const ProductCategory = () => {
+  const {categories} = useSelector(categorySelectors);
   return (
     <View style={styles.container}>
-      {categoryData.map((category) => (
+      {categories.map((category) => (
         <CategoryCard {...category} key={category.categoryName} />
       ))}
     </View>

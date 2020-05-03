@@ -2,11 +2,14 @@ import React from 'react';
 import {FlatList, View} from 'react-native';
 import EmptyCardNote from '../components/EmptyCardNote';
 import ActionButton from '../../../common/components/ActionButton';
-import {cartData} from '../constants';
 import CartItem from '../components/CartItem';
 import styles from '../styles/CartSceneStyles';
+import {useSelector} from 'react-redux';
+import {cartSelectors} from '../../../core/cart/stores';
 
 const CartScene = ({navigation}: {navigation: any}) => {
+  const {cart} = useSelector(cartSelectors);
+  const cartData = Object.values(cart);
   const navigateToHome = () => navigation.navigate('Home');
   return (
     <View style={styles.container}>

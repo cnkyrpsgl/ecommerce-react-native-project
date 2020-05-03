@@ -1,15 +1,17 @@
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
-import {popularData} from '../constants';
 import PopularProduct from './PopularProduct';
-import styles from '../scenes/PopularSearchStyles';
+import styles from '../styles/PopularSearchStyles';
+import {useSelector} from 'react-redux';
+import {searchSelectors} from '../../../core/search/stores';
 
 const PopularSearch = () => {
+  const {popularSearches} = useSelector(searchSelectors);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Popular Searches</Text>
       <FlatList
-        data={popularData}
+        data={popularSearches}
         horizontal={true}
         style={styles.flatList}
         contentContainerStyle={styles.contentContainer}

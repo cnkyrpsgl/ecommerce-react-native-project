@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import styles from '../scenes/SearchBarStyles';
+import styles from '../styles/SearchBarStyles';
 
 const SearchBar = () => {
   return (

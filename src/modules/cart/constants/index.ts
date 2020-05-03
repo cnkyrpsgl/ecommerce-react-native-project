@@ -1,14 +1,14 @@
-export const cartData = [
-  {
+export const cartData = {
+  '123123': {
     productName: 'Orange 1 kg',
     unitPrice: 6.75,
     amount: 2,
-    urlSource: require('../assets/orange.jpg')
+    imageSource: require('../assets/orange.jpg')
   },
-  {
+  '321321': {
     productName: 'Coca-Cola 330 ml',
     unitPrice: 4.5,
     amount: 3,
-    urlSource: require('../assets/coca-cola.jpg')
+    imageSource: require('../assets/coca-cola.jpg')
   }
-];
+};
