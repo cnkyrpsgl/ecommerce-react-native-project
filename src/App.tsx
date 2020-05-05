@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import {StatusBar} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,9 +14,10 @@ import HomeStackScreen from './modules/home/navigator';
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
+  const {t} = useTranslation();
   return (
     <>
-      <StatusBar translucent backgroundColor="rgba(0, 0, 0, 0)" />
+      <StatusBar translucent backgroundColor="rgba(0, 0, 0, 0.3)" />
       <NavigationContainer>
         <Tab.Navigator
           initialRouteName={'Home'}
@@ -27,7 +29,7 @@ export default function App() {
             name="Home"
             component={HomeStackScreen}
             options={{
-              tabBarLabel: 'Home',
+              tabBarLabel: t('Home'),
               tabBarIcon: ({color}) => (
                 <MaterialIcon name="home-outline" color={color} size={26} />
               )
@@ -37,7 +39,7 @@ export default function App() {
             name="Search"
             component={SearchStackScreen}
             options={{
-              tabBarLabel: 'Search',
+              tabBarLabel: t('Search'),
               tabBarIcon: ({color}) => (
                 <MaterialIcon name="magnify" color={color} size={26} />
               )
@@ -47,7 +49,7 @@ export default function App() {
             name="Cart"
             component={CartStackScreen}
             options={{
-              tabBarLabel: 'Cart',
+              tabBarLabel: t('Cart'),
               tabBarIcon: ({color}) => (
                 <MaterialIcon name="cart-outline" color={color} size={26} />
               )
@@ -57,7 +59,7 @@ export default function App() {
             name="Campaign"
             component={CampaingStackScreen}
             options={{
-              tabBarLabel: 'Campaign',
+              tabBarLabel: t('Campaign', {count: 2}),
               tabBarIcon: ({color}) => (
                 <MaterialIcon name="bullhorn-outline" color={color} size={26} />
               )
@@ -67,7 +69,7 @@ export default function App() {
             name="Profile"
             component={ProfileStackScreen}
             options={{
-              tabBarLabel: 'Profile',
+              tabBarLabel: t('Profile'),
               tabBarIcon: ({color}) => (
                 <MaterialIcon name="account-outline" color={color} size={26} />
               )

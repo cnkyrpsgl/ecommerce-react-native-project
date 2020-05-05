@@ -1,0 +1,96 @@
+{
+  "translation": {
+    "Home": "Home",
+    "Search": "Search",
+    "Cart": "Cart",
+    "Campaign": "Campaign",
+    "Campaign_plural": "Campaigns",
+    "Profile": "Profile",
+
+    "Bakery": "Bakery",
+    "Beverage": "Beverage",
+    "Book": "Book",
+    "Breakfast": "Breakfast",
+    "Childcare": "Childcare",
+    "Cleaning": "Cleaning",
+    "Cosmetics": "Cosmetics",
+    "Dairy": "Dairy",
+    "Fresh": "Fresh",
+    "House": "House",
+    "Ice cream": "Ice cream",
+    "Meat": "Meat",
+    "Organic": "Organic",
+    "Pastry": "Pastry",
+    "Pet": "Pet",
+    "Snack": "Snack",
+    "Supplement": "Supplement",
+    "Technology": "Technology",
+    "Textile": "Textile",
+    "Vitamin": "Vitamin",
+    "World Cuisine": "World Cuisine",
+
+
+    "Search Product": "Search Product",
+    "Popular Searches": "Popular Searches",
+
+
+    "water": "water",
+    "milk": "milk",
+    "bread": "bread",
+    "egg": "egg",
+    "yoghurt": "yoghurt",
+    "coffee": "coffee",
+    "cheese": "cheese",
+    "fish": "fish",
+    "ice cream": "ice cream",
+
+
+    "Shopping Cart": "Shopping Cart",
+    "Start Shopping": "Start Shopping",
+    "Orange 1 kg": "Orange 1 kg",
+    "$": "$",
+
+
+    "Account": "Account",
+    "Name": "Name",
+    "Surname": "Surname",
+    "Email": "Email",
+    "Phone": "Phone",
+    "Save": "Save",
+
+
+    "Address": "Address",
+    "My Addresses": "My Addresses",
+    "Add New Address": "Add New Address",
+    "Work": "Work",
+
+
+    "Edit Address": "Edit Address",
+    "Address Name": "Address Name",
+    "Address Detail": "Address Detail",
+    "Save": "Save",
+
+
+    "Payment": "Payment",
+    "Add New Card": "Add New Card",
+    "Delete": "Delete",
+
+
+    "History": "History",
+    "products": "products",
+
+
+    "Account": "Account",
+    "Addresses": "Addresses",
+    "Payments": "Payments",
+    "Orders": "Orders",
+    "Change Language": "Change Language",
+    "Log Out": "Log Out",
+
+
+    "English": "English",
+    "en": "English",
+    "Turkish": "Turkish",
+    "tr": "Turkish"
+  }
+}

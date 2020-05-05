@@ -1,0 +1,96 @@
+{
+  "translation": {
+    "Home": "Ana Sayfa",
+    "Search": "Ara",
+    "Cart": "Sepet",
+    "Campaign": "Kampanya",
+    "Campaign_plural": "Kampanyalar",
+    "Profile": "Profil",
+
+
+    "Bakery": "Fırın",
+    "Beverage": "İçecek",
+    "Book": "Kitap",
+    "Breakfast": "Kahvaltı",
+    "Childcare": "Çocuk Bakımı",
+    "Cleaning": "Temizlik",
+    "Cosmetics": "Kozmetik",
+    "Dairy": "Süt Ürünleri",
+    "Fresh": "Taze",
+    "House": "Ev",
+    "Ice cream": "Dondurma",
+    "Meat": "Et",
+    "Organic": "Organik",
+    "Pastry": "Hamur İşi",
+    "Pet": "Evcil Hayvan",
+    "Snack": "Atıştırmalık",
+    "Supplement": "Takviye Gıda",
+    "Technology": "Teknoloji",
+    "Textile": "Giyim",
+    "Vitamin": "Vitamin",
+    "World Cuisine": "Dünya Mutfağı",
+
+
+    "Search Product": "Ürün Ara",
+    "Popular Searches": "Popüler Aramalar",
+
+
+    "water": "su",
+    "milk": "süt",
+    "bread": "ekmek",
+    "egg": "yumurta",
+    "yoghurt": "yoğurt",
+    "coffee": "kahve",
+    "cheese": "peynir",
+    "fish": "balık",
+    "ice cream": "dondurma",
+
+
+    "Shopping Cart": "Alışveriş Sepeti",
+    "Start Shopping": "Alışverişe Başla",
+    "Orange 1 kg": "Portakal 1 kg",
+    "$": "TL",
+
+
+    "Account": "Hesap",
+    "Name": "İsim",
+    "Surname": "Soyisim",
+    "Email": "Email",
+    "Phone": "Telefon",
+    "Save": "Kaydet",
+
+
+    "Address": "Adres",
+    "My Addresses": "Adreslerim",
+    "Add New Address": "Yeni Adres Ekle",
+    "Work": "İş",
+
+
+    "Edit Address": "Adres Düzenle",
+    "Address Name": "Adres Adı",
+    "Address Detail": "Adres Detayı",
+
+
+    "Payment": "Ödeme",
+    "Add New Card": "Yeni Kart Ekle",
+    "Delete": "Sil",
+
+
+    "History": "Geçmiş",
+    "products": "ürün",
+
+
+    "Account": "Hesabım",
+    "Addresses": "Adresler",
+    "Payments": "Ödemeler",
+    "Orders": "Siparişlerim",
+    "Change Language": "Dil Değiştir",
+    "Log Out": "Çıkış Yap",
+
+
+    "English": "İngilizce",
+    "en": "İngilizce",
+    "Turkish": "Türkçe",
+    "tr": "Türkçe"
+  }
+}

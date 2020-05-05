@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/EmptyCardNoteStyles';
+import {useTranslation} from 'react-i18next';
 
 const EmptyCardNote = () => {
   return (

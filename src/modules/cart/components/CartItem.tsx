@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/CartItemStyles';
+import {useTranslation} from 'react-i18next';
 
 const CartItem = ({
   productName,
@@ -20,6 +21,7 @@ const CartItem = ({
   amount: number;
   imageSource: ImageSourcePropType;
 }) => {
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.productContainer}>
@@ -27,8 +29,8 @@ const CartItem = ({
           <Image source={imageSource} style={styles.image} />
         </View>
         <View style={styles.textContainer}>
-          <Text>{productName}</Text>
-          <Text style={styles.price}>{`${unitPrice} $`}</Text>
+          <Text>{t(productName)}</Text>
+          <Text style={styles.price}>{`${unitPrice} ${t('$')}`}</Text>
         </View>
       </View>
       <View style={styles.amountContainer}>

@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/AddressCardStyles';
+import {useTranslation} from 'react-i18next';
 
 const AddressCard = ({
   title,
@@ -17,10 +18,11 @@ const AddressCard = ({
   detail: string;
   editAction: (event: GestureResponderEvent) => void;
 }) => {
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{t(title)}</Text>
         <View style={styles.actionContainer}>
           <TouchableOpacity onPress={editAction}>
             <MaterialIcon name="pencil-outline" size={24} color={'orange'} />

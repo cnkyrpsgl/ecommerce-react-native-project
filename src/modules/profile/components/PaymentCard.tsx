@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/PaymentCardStyles';
+import {useTranslation} from 'react-i18next';
 
 const masterCardIcon = require('../assets/mastercard.png');
 
@@ -12,6 +13,7 @@ const PaymentCard = ({
   cardName: string;
   cardNumber: string;
 }) => {
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.detailContainer}>
@@ -23,7 +25,7 @@ const PaymentCard = ({
         </View>
       </View>
       <TouchableOpacity>
-        <Text style={styles.delete}>Delete</Text>
+        <Text style={styles.delete}>{t('Delete')}</Text>
       </TouchableOpacity>
     </View>
   );

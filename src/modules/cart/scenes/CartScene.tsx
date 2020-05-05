@@ -8,8 +8,10 @@ import {useSelector} from 'react-redux';
 import {cartSelectors} from '../../../core/cart/stores';
 import {SwipeListView} from 'react-native-swipe-list-view';
 import SwipeBackItem from '../components/SwipeBackItem';
+import {useTranslation} from 'react-i18next';
 
 const CartScene = ({navigation}: {navigation: any}) => {
+  const {t} = useTranslation();
   const {cart} = useSelector(cartSelectors);
   const cartData = Object.values(cart);
   const navigateToHome = () => navigation.navigate('Home');
@@ -31,7 +33,7 @@ const CartScene = ({navigation}: {navigation: any}) => {
       ) : (
         <>
           <EmptyCardNote />
-          <ActionButton title={'Start Shopping'} action={navigateToHome} />
+          <ActionButton title={t('Start Shopping')} action={navigateToHome} />
         </>
       )}
     </View>

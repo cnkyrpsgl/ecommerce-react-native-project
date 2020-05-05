@@ -9,7 +9,7 @@ export const profileMenuData = [
 
 export const addressData = {
   1: {
-    title: 'Home',
+    title: 'House',
     detail:
       '1399 Pingree Ave, Lincoln Park, MI, 48146 askfnaskfnadkfnadkcvnadlkscmnaslkcmaslxmaslcxmaslcmaslcmsalcmlsamclasmc adlsamclasc sac ascaslc'
   },

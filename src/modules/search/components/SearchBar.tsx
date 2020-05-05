@@ -2,8 +2,10 @@ import React from 'react';
 import {TextInput, TouchableOpacity, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/SearchBarStyles';
+import {useTranslation} from 'react-i18next';
 
 const SearchBar = () => {
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -13,7 +15,7 @@ const SearchBar = () => {
           style={styles.search}
           color={'orange'}
         />
-        <TextInput placeholder={'Search Product'} />
+        <TextInput placeholder={t('Search Product')} />
       </View>
       <TouchableOpacity>
         <MaterialIcon

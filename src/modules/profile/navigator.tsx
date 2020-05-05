@@ -6,14 +6,16 @@ import HistoryScene from './scenes/HistoryScene';
 import AddressScene from './scenes/AddressScene';
 import PaymentScene from './scenes/PaymentScene';
 import AddressEditScene from './scenes/AddressEditScene';
+import {useTranslation} from 'react-i18next';
 
 const ProfileStack = createStackNavigator();
 
 function ProfileStackScreen() {
+  const {t} = useTranslation();
   return (
     <ProfileStack.Navigator>
       <ProfileStack.Screen
-        name="Profile"
+        name={t('Profile')}
         component={ProfileScene}
         options={{
           headerTintColor: 'white',
@@ -25,7 +27,8 @@ function ProfileStackScreen() {
         component={AccountScene}
         options={{
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'}
+          headerStyle: {backgroundColor: 'orange'},
+          headerTitle: t('Account')
         }}
       />
       <ProfileStack.Screen
@@ -33,7 +36,8 @@ function ProfileStackScreen() {
         component={AddressScene}
         options={{
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'}
+          headerStyle: {backgroundColor: 'orange'},
+          headerTitle: t('Address')
         }}
       />
       <ProfileStack.Screen
@@ -41,7 +45,8 @@ function ProfileStackScreen() {
         component={AddressEditScene}
         options={{
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'}
+          headerStyle: {backgroundColor: 'orange'},
+          headerTitle: t('Edit Address')
         }}
       />
       <ProfileStack.Screen
@@ -49,7 +54,8 @@ function ProfileStackScreen() {
         component={PaymentScene}
         options={{
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'}
+          headerStyle: {backgroundColor: 'orange'},
+          headerTitle: t('Payment')
         }}
       />
       <ProfileStack.Screen
@@ -57,7 +63,8 @@ function ProfileStackScreen() {
         component={HistoryScene}
         options={{
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'}
+          headerStyle: {backgroundColor: 'orange'},
+          headerTitle: t('History')
         }}
       />
     </ProfileStack.Navigator>

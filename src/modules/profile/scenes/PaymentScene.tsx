@@ -5,8 +5,10 @@ import DarkActionButton from '../../../common/components/DarkActionButton';
 import styles from '../styles/PaymentSceneStyles';
 import {useSelector} from 'react-redux';
 import {paymentSelectors} from '../../../core/payment/stores';
+import {useTranslation} from 'react-i18next';
 
 const PaymentScene = () => {
+  const {t} = useTranslation();
   const {paymentMap} = useSelector(paymentSelectors);
   return (
     <View style={styles.container}>
@@ -14,7 +16,7 @@ const PaymentScene = () => {
         <PaymentCard {...payment} key={index.toString()} />
       ))}
       <View style={styles.actionContainer}>
-        <DarkActionButton name={'Add New Card'} />
+        <DarkActionButton name={t('Add New Card')} />
       </View>
     </View>
   );

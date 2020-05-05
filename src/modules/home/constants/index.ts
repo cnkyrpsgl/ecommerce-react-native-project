@@ -4,11 +4,11 @@ export const categoryData = [
     urlSource: require('../assets/bakery.jpg')
   },
   {
-    categoryName: 'Beverages',
+    categoryName: 'Beverage',
     urlSource: require('../assets/beverages.jpg')
   },
   {
-    categoryName: 'Books',
+    categoryName: 'Book',
     urlSource: require('../assets/books.jpg')
   },
   {
@@ -36,7 +36,7 @@ export const categoryData = [
     urlSource: require('../assets/fresh.jpg')
   },
   {
-    categoryName: 'Home',
+    categoryName: 'House',
     urlSource: require('../assets/home.jpg')
   },
   {
@@ -80,7 +80,7 @@ export const categoryData = [
     urlSource: require('../assets/vitamin.jpg')
   },
   {
-    categoryName: 'World',
+    categoryName: 'World Cuisine',
     urlSource: require('../assets/world.jpg')
   }
 ];

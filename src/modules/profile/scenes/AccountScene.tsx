@@ -8,6 +8,7 @@ import {useSelector} from 'react-redux';
 import {identitySelectors} from '../../../core/identity/stores';
 import {User} from '../../../core/identity/stores/identityTypes';
 import {number, object, string} from 'yup';
+import {useTranslation} from 'react-i18next';
 
 const validationSchema = object().shape<User>({
   id: number().required(),
@@ -23,6 +24,7 @@ const validationSchema = object().shape<User>({
 });
 
 const AccountScene = () => {
+  const {t} = useTranslation();
   const {user} = useSelector(identitySelectors);
   return (
     <Formik<User>
@@ -34,7 +36,7 @@ const AccountScene = () => {
           <View style={styles.container}>
             <TextInput
               mode="outlined"
-              label="Name"
+              label={t('Name')}
               placeholder="Please enter your name here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
@@ -42,7 +44,7 @@ const AccountScene = () => {
             />
             <TextInput
               mode="outlined"
-              label="Surname"
+              label={t('Surname')}
               placeholder="Please enter your surname here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
@@ -50,7 +52,7 @@ const AccountScene = () => {
             />
             <TextInput
               mode="outlined"
-              label="Email"
+              label={t('Email')}
               placeholder="Please enter your email here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
@@ -58,7 +60,7 @@ const AccountScene = () => {
             />
             <TextInput
               mode="outlined"
-              label="Phone"
+              label={t('Phone')}
               placeholder="Please enter your phone number here."
               style={styles.input}
               theme={{colors: {placeholder: 'orange'}}}
@@ -66,7 +68,7 @@ const AccountScene = () => {
             />
           </View>
           <View style={styles.actionContainer}>
-            <DarkActionButton name={'Save'} />
+            <DarkActionButton name={t('Save')} />
           </View>
         </>
       )}

@@ -16,4 +16,20 @@ const profileSceneStyles: ProfileSceneStyles = {
   }
 };
 
+interface ModalStyles {
+  container: ViewStyle;
+}
+
+export const modalStyles: ModalStyles = {
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    margin: 0,
+    paddingHorizontal: '10%',
+    justifyContent: 'center'
+  }
+};
+
 export default profileSceneStyles;
