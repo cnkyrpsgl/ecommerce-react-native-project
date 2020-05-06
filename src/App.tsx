@@ -10,11 +10,14 @@ import CampaingStackScreen from './modules/campaign/navigator';
 import CartStackScreen from './modules/cart/navigator';
 import SearchStackScreen from './modules/search/navigator';
 import HomeStackScreen from './modules/home/navigator';
+import styles from './AppStyles';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
     <>
       <StatusBar translucent backgroundColor="rgba(0, 0, 0, 0.3)" />
@@ -22,9 +25,9 @@ export default function App() {
         <Tab.Navigator
           initialRouteName={'Home'}
           backBehavior={'none'}
-          activeColor={'white'}
-          inactiveColor={'white'}
-          barStyle={{backgroundColor: 'orange'}}>
+          activeColor={styles[mode].navigator.activeColor}
+          inactiveColor={styles[mode].navigator.inactiveColor}
+          barStyle={{backgroundColor: styles[mode].navigator.backgroundColor}}>
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}

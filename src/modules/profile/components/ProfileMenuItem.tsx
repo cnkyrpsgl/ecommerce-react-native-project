@@ -3,6 +3,7 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/ProfileMenuItemStyles';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const ProfileMenuItem = ({
   title,
@@ -14,11 +15,12 @@ const ProfileMenuItem = ({
   onPress: Function;
 }) => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
-    <TouchableOpacity onPress={() => onPress()} style={styles.container}>
-      <View style={styles.contentContainer}>
+    <TouchableOpacity onPress={() => onPress()} style={styles[mode].container}>
+      <View style={styles[mode].contentContainer}>
         <MaterialIcon name={icon} size={26} color={'orange'} />
-        <Text style={styles.title}>{t(title)}</Text>
+        <Text style={styles[mode].title}>{t(title)}</Text>
         <MaterialIcon name="chevron-right" size={26} color={'orange'} />
       </View>
     </TouchableOpacity>

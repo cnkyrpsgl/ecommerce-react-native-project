@@ -7,16 +7,18 @@ import ProfileMenuItem from '../components/ProfileMenuItem';
 import ActionButton from '../../../common/components/ActionButton';
 import {useTranslation} from 'react-i18next';
 import LanguageOptions from '../components/LanguageOptions';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const ProfileScene = ({navigation}: {navigation: any}) => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
   const openLanguageModal = () => setLanguageModalVisible(true);
   const closeLanguageModal = () => setLanguageModalVisible(false);
   const windowHeight = useWindowDimensions().height;
   return (
     <>
-      <View style={styles.container}>
+      <View style={styles[mode].container}>
         <FlatList
           data={profileMenuData}
           keyExtractor={(item) => item.title}
@@ -26,7 +28,7 @@ const ProfileScene = ({navigation}: {navigation: any}) => {
               onPress={() => navigation.navigate(item.scene)}
             />
           )}
-          contentContainerStyle={styles.contentContainer}
+          contentContainerStyle={styles[mode].contentContainer}
         />
         <ActionButton title={t('Change Language')} action={openLanguageModal} />
         <ActionButton title={t('Log Out')} action={() => {}} />
@@ -35,7 +37,7 @@ const ProfileScene = ({navigation}: {navigation: any}) => {
         isVisible={languageModalVisible}
         swipeDirection={'down'}
         onBackdropPress={closeLanguageModal}
-        style={[modalStyles.container, {marginTop: windowHeight * 0.6}]}>
+        style={[modalStyles[mode].container, {marginTop: windowHeight * 0.6}]}>
         <LanguageOptions action={closeLanguageModal} />
       </Modal>
     </>

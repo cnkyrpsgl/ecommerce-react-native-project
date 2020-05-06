@@ -4,17 +4,19 @@ import styles from '../styles/AddressEditSceneStyles';
 import {TextInput} from 'react-native-paper';
 import DarkActionButton from '../../../common/components/DarkActionButton';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const AddressEditScene = () => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
-    <View style={styles.container}>
+    <View style={styles[mode].container}>
       <TextInput
         mode="outlined"
         label={t('Address Name')}
         placeholder="Please enter your address name here."
         theme={{colors: {placeholder: 'orange'}}}
-        style={{marginVertical: '3%'}}
+        style={styles[mode].textInput}
       />
       <TextInput
         mode="outlined"
@@ -23,9 +25,9 @@ const AddressEditScene = () => {
         theme={{colors: {placeholder: 'orange'}}}
         multiline={true}
         numberOfLines={5}
-        style={{marginVertical: '3%'}}
+        style={styles[mode].textInput}
       />
-      <View style={styles.actionButtonContainer}>
+      <View style={styles[mode].actionButtonContainer}>
         <DarkActionButton name={t('Save')} />
       </View>
     </View>

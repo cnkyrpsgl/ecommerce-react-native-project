@@ -9,6 +9,7 @@ import {identitySelectors} from '../../../core/identity/stores';
 import {User} from '../../../core/identity/stores/identityTypes';
 import {number, object, string} from 'yup';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const validationSchema = object().shape<User>({
   id: number().required(),
@@ -25,6 +26,7 @@ const validationSchema = object().shape<User>({
 
 const AccountScene = () => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   const {user} = useSelector(identitySelectors);
   return (
     <Formik<User>
@@ -32,13 +34,13 @@ const AccountScene = () => {
       initialValues={{...user}}
       onSubmit={() => {}}>
       {() => (
-        <>
-          <View style={styles.container}>
+        <View style={styles[mode].container}>
+          <View style={styles[mode].formContainer}>
             <TextInput
               mode="outlined"
               label={t('Name')}
               placeholder="Please enter your name here."
-              style={styles.input}
+              style={styles[mode].input}
               theme={{colors: {placeholder: 'orange'}}}
               value={user.name}
             />
@@ -46,7 +48,7 @@ const AccountScene = () => {
               mode="outlined"
               label={t('Surname')}
               placeholder="Please enter your surname here."
-              style={styles.input}
+              style={styles[mode].input}
               theme={{colors: {placeholder: 'orange'}}}
               value={user.lastName}
             />
@@ -54,7 +56,7 @@ const AccountScene = () => {
               mode="outlined"
               label={t('Email')}
               placeholder="Please enter your email here."
-              style={styles.input}
+              style={styles[mode].input}
               theme={{colors: {placeholder: 'orange'}}}
               value={user.email}
             />
@@ -62,15 +64,15 @@ const AccountScene = () => {
               mode="outlined"
               label={t('Phone')}
               placeholder="Please enter your phone number here."
-              style={styles.input}
+              style={styles[mode].input}
               theme={{colors: {placeholder: 'orange'}}}
               value={user.phoneNumber}
             />
           </View>
-          <View style={styles.actionContainer}>
+          <View style={styles[mode].actionContainer}>
             <DarkActionButton name={t('Save')} />
           </View>
-        </>
+        </View>
       )}
     </Formik>
   );

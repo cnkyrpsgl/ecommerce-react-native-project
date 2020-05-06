@@ -1,21 +1,48 @@
-import {ImageStyle, ViewStyle} from 'react-native';
+import {ImageStyle, TextStyle, ViewStyle} from 'react-native';
 
-interface CategoryCardStyles {
+interface SelectedStyles {
   container: ViewStyle;
   image: ImageStyle;
+  categoryName: TextStyle;
+}
+
+interface CategoryCardStyles {
+  dark: SelectedStyles;
+  light: SelectedStyles;
 }
 
 const categoryCardStyles: CategoryCardStyles = {
-  container: {
-    borderRadius: 8,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    margin: '2%',
-    padding: '2%'
+  dark: {
+    container: {
+      borderRadius: 8,
+      backgroundColor: '#000000',
+      alignItems: 'center',
+      margin: '2%',
+      padding: '2%'
+    },
+    image: {
+      width: 90,
+      height: 80
+    },
+    categoryName: {
+      color: '#FFFFFF'
+    }
   },
-  image: {
-    width: 90,
-    height: 80
+  light: {
+    container: {
+      borderRadius: 8,
+      backgroundColor: '#FFFFFF',
+      alignItems: 'center',
+      margin: '2%',
+      padding: '2%'
+    },
+    image: {
+      width: 90,
+      height: 80
+    },
+    categoryName: {
+      color: '#000000'
+    }
   }
 };
 

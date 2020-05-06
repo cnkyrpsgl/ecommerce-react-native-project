@@ -9,6 +9,7 @@ import {
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/CartItemStyles';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const CartItem = ({
   productName,
@@ -22,32 +23,33 @@ const CartItem = ({
   imageSource: ImageSourcePropType;
 }) => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
-    <View style={styles.container}>
-      <View style={styles.productContainer}>
-        <View style={styles.imageContainer}>
-          <Image source={imageSource} style={styles.image} />
+    <View style={styles[mode].container}>
+      <View style={styles[mode].productContainer}>
+        <View style={styles[mode].imageContainer}>
+          <Image source={imageSource} style={styles[mode].image} />
         </View>
-        <View style={styles.textContainer}>
-          <Text>{t(productName)}</Text>
-          <Text style={styles.price}>{`${unitPrice} ${t('$')}`}</Text>
+        <View style={styles[mode].textContainer}>
+          <Text style={styles[mode].productName}>{t(productName)}</Text>
+          <Text style={styles[mode].price}>{`${unitPrice} ${t('$')}`}</Text>
         </View>
       </View>
-      <View style={styles.amountContainer}>
+      <View style={styles[mode].amountContainer}>
         <TouchableOpacity>
           <MaterialIcon
             name="minus"
             size={20}
-            style={styles.minus}
+            style={styles[mode].minus}
             color={'red'}
           />
         </TouchableOpacity>
-        <Text style={styles.amount}>{amount}</Text>
+        <Text style={styles[mode].amount}>{amount}</Text>
         <TouchableOpacity>
           <MaterialIcon
             name="plus"
             size={20}
-            style={styles.plus}
+            style={styles[mode].plus}
             color={'green'}
           />
         </TouchableOpacity>

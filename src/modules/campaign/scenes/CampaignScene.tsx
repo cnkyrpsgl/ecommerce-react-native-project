@@ -4,11 +4,13 @@ import CampaignCard from '../components/CampaignCard';
 import styles from '../styles/CampaingSceneStyles';
 import {useSelector} from 'react-redux';
 import {campaignSelectors} from '../../../core/campaign/stores';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const CampaignScene = () => {
+  const mode = useDarkModeContext();
   const {campaigns} = useSelector(campaignSelectors);
   return (
-    <View style={styles.container}>
+    <View style={styles[mode].container}>
       <FlatList
         data={campaigns}
         keyExtractor={(_, index) => index.toString()}

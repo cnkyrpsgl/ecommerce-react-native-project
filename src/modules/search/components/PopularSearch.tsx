@@ -5,18 +5,20 @@ import styles from '../styles/PopularSearchStyles';
 import {useSelector} from 'react-redux';
 import {searchSelectors} from '../../../core/search/stores';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const PopularSearch = () => {
   const {popularSearches} = useSelector(searchSelectors);
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{t('Popular Searches')}</Text>
+    <View style={styles[mode].container}>
+      <Text style={styles[mode].title}>{t('Popular Searches')}</Text>
       <FlatList
         data={popularSearches}
         horizontal={true}
-        style={styles.flatList}
-        contentContainerStyle={styles.contentContainer}
+        style={styles[mode].flatList}
+        contentContainerStyle={styles[mode].contentContainer}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({item}) => <PopularProduct {...item} />}
       />

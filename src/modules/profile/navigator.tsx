@@ -7,27 +7,30 @@ import AddressScene from './scenes/AddressScene';
 import PaymentScene from './scenes/PaymentScene';
 import AddressEditScene from './scenes/AddressEditScene';
 import {useTranslation} from 'react-i18next';
+import styles from '../../common/styles/navigatorStyles';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const ProfileStack = createStackNavigator();
 
 function ProfileStackScreen() {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
     <ProfileStack.Navigator>
       <ProfileStack.Screen
         name={t('Profile')}
         component={ProfileScene}
         options={{
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'}
+          headerTintColor: styles[mode].header.tintColor,
+          headerStyle: {backgroundColor: styles[mode].header.backgroundColor}
         }}
       />
       <ProfileStack.Screen
         name="Account"
         component={AccountScene}
         options={{
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'},
+          headerTintColor: styles[mode].header.tintColor,
+          headerStyle: {backgroundColor: styles[mode].header.backgroundColor},
           headerTitle: t('Account')
         }}
       />
@@ -35,8 +38,8 @@ function ProfileStackScreen() {
         name="Address"
         component={AddressScene}
         options={{
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'},
+          headerTintColor: styles[mode].header.tintColor,
+          headerStyle: {backgroundColor: styles[mode].header.backgroundColor},
           headerTitle: t('Address')
         }}
       />
@@ -44,8 +47,8 @@ function ProfileStackScreen() {
         name="Edit Address"
         component={AddressEditScene}
         options={{
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'},
+          headerTintColor: styles[mode].header.tintColor,
+          headerStyle: {backgroundColor: styles[mode].header.backgroundColor},
           headerTitle: t('Edit Address')
         }}
       />
@@ -53,8 +56,8 @@ function ProfileStackScreen() {
         name="Payment"
         component={PaymentScene}
         options={{
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'},
+          headerTintColor: styles[mode].header.tintColor,
+          headerStyle: {backgroundColor: styles[mode].header.backgroundColor},
           headerTitle: t('Payment')
         }}
       />
@@ -62,8 +65,8 @@ function ProfileStackScreen() {
         name="History"
         component={HistoryScene}
         options={{
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'orange'},
+          headerTintColor: styles[mode].header.tintColor,
+          headerStyle: {backgroundColor: styles[mode].header.backgroundColor},
           headerTitle: t('History')
         }}
       />

@@ -8,6 +8,7 @@ import {
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from '../styles/AddressCardStyles';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const AddressCard = ({
   title,
@@ -19,11 +20,12 @@ const AddressCard = ({
   editAction: (event: GestureResponderEvent) => void;
 }) => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   return (
-    <View style={styles.container}>
-      <View style={styles.upperContainer}>
-        <Text style={styles.title}>{t(title)}</Text>
-        <View style={styles.actionContainer}>
+    <View style={styles[mode].container}>
+      <View style={styles[mode].upperContainer}>
+        <Text style={styles[mode].title}>{t(title)}</Text>
+        <View style={styles[mode].actionContainer}>
           <TouchableOpacity onPress={editAction}>
             <MaterialIcon name="pencil-outline" size={24} color={'orange'} />
           </TouchableOpacity>

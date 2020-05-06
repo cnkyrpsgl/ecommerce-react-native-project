@@ -9,14 +9,16 @@ import {cartSelectors} from '../../../core/cart/stores';
 import {SwipeListView} from 'react-native-swipe-list-view';
 import SwipeBackItem from '../components/SwipeBackItem';
 import {useTranslation} from 'react-i18next';
+import {useDarkModeContext} from 'react-native-dark-mode';
 
 const CartScene = ({navigation}: {navigation: any}) => {
   const {t} = useTranslation();
+  const mode = useDarkModeContext();
   const {cart} = useSelector(cartSelectors);
   const cartData = Object.values(cart);
   const navigateToHome = () => navigation.navigate('Home');
   return (
-    <View style={styles.container}>
+    <View style={styles[mode].container}>
       {cartData.length > 0 ? (
         <SwipeListView
           keyExtractor={(_, index: number) => index.toString()}
