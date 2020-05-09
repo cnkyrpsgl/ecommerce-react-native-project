@@ -1,4 +1,5 @@
 import 'react-native-gesture-handler';
+import SplashScreen from 'react-native-splash-screen';
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {useTranslation} from 'react-i18next';
@@ -12,10 +13,15 @@ import SearchStackScreen from './modules/search/navigator';
 import HomeStackScreen from './modules/home/navigator';
 import styles from './AppStyles';
 import {useDarkModeContext} from 'react-native-dark-mode';
+import {useEffect} from 'react';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   const {t} = useTranslation();
   const mode = useDarkModeContext();
   return (
