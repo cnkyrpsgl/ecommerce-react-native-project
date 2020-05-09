@@ -31,14 +31,17 @@ Run `npm run ios`
 Run `npm run android`
 
 ## Some Screenshots
-- Home Page [iOS - English - Dark Mode]
+ #### Home Page [iOS - English - Dark Mode]
+ #### Home Page [Android - Turkish - Light Mode]
  ![Alt text](docs/images/home_ios.png)
-
-- Home Page [Android - Turkish - Light Mode]
  ![Alt text](docs/images/home_android.png)
 
-- Profile Page [iOS - English - Dark Mode]
+ #### Profile Page [iOS - English - Dark Mode]
+ #### Profile Page [Android - Turkish - Light Mode]
  ![Alt text](docs/images/profile_ios.png)
-
-- Profile Page [Android - Turkish - Light Mode]
  ![Alt text](docs/images/profile_android.png)
+ 
+ #### App Icon [iOS - English - Dark Mode] 
+ #### App Icon [Android - Turkish - Light Mode]
+  ![Alt text](docs/images/icon_ios.png)
+  ![Alt text](docs/images/icon_android.png)
