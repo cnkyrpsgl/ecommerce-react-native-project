@@ -11,33 +11,33 @@ interface AddressSceneStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flex: 1,
+    paddingHorizontal: '10%'
+  },
+  titleContainer: {
+    paddingVertical: '5%'
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 20
+  }
+};
+
 const addressSceneStyles: AddressSceneStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      backgroundColor: '#9e7009',
-      paddingHorizontal: '10%'
-    },
-    titleContainer: {
-      paddingVertical: '5%'
-    },
-    title: {
-      fontWeight: 'bold',
-      fontSize: 20
+      ...commonStyles.container,
+      backgroundColor: '#9e7009'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      backgroundColor: '#f6f6f6',
-      paddingHorizontal: '10%'
-    },
-    titleContainer: {
-      paddingVertical: '5%'
-    },
-    title: {
-      fontWeight: 'bold',
-      fontSize: 20
+      ...commonStyles.container,
+      backgroundColor: '#f6f6f6'
     }
   }
 };

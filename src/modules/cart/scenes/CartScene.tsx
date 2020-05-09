@@ -25,7 +25,7 @@ const CartScene = ({navigation}: {navigation: any}) => {
           useFlatList={true}
           data={cartData}
           renderItem={(rowData) => <CartItem {...rowData.item} />}
-          renderHiddenItem={SwipeBackItem}
+          renderHiddenItem={() => <SwipeBackItem mode={mode} />}
           rightOpenValue={-75}
           disableRightSwipe
           stopRightSwipe={-75}

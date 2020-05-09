@@ -1,12 +1,17 @@
 import {TextStyle, ViewStyle} from 'react-native';
 
-interface EmptyCardNoteStyles {
+interface SelectedStyles {
   container: ViewStyle;
   iconContainer: ViewStyle;
   note: TextStyle;
 }
 
-const emptyCardNoteStyles: EmptyCardNoteStyles = {
+interface EmptyCardNoteStyles {
+  dark: SelectedStyles;
+  light: SelectedStyles;
+}
+
+const commonStyles: SelectedStyles = {
   container: {
     flex: 0.8,
     alignItems: 'center',
@@ -15,15 +20,38 @@ const emptyCardNoteStyles: EmptyCardNoteStyles = {
   },
   iconContainer: {
     marginVertical: '10%',
-    backgroundColor: 'white',
     borderRadius: 10,
     paddingVertical: '5%',
     paddingHorizontal: '7%'
   },
   note: {
     fontSize: 16,
-    textAlign: 'center',
-    color: '#f08a5d'
+    textAlign: 'center'
+  }
+};
+
+const emptyCardNoteStyles: EmptyCardNoteStyles = {
+  dark: {
+    ...commonStyles,
+    iconContainer: {
+      ...commonStyles.iconContainer,
+      backgroundColor: '#5f4001'
+    },
+    note: {
+      ...commonStyles.note,
+      color: '#52ef26'
+    }
+  },
+  light: {
+    ...commonStyles,
+    iconContainer: {
+      ...commonStyles.iconContainer,
+      backgroundColor: '#ffffff'
+    },
+    note: {
+      ...commonStyles.note,
+      color: '#f08a5d'
+    }
   }
 };
 

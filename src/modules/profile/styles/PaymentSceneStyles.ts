@@ -10,25 +10,29 @@ interface PaymentSceneStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flex: 1,
+    padding: '3%'
+  },
+  actionContainer: {
+    marginVertical: '5%'
+  }
+};
+
 const paymentSceneStyles: PaymentSceneStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      padding: '3%',
+      ...commonStyles.container,
       backgroundColor: '#9e7009'
-    },
-    actionContainer: {
-      marginVertical: '5%'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      padding: '3%',
+      ...commonStyles.container,
       backgroundColor: '#f6f6f6'
-    },
-    actionContainer: {
-      marginVertical: '5%'
     }
   }
 };

@@ -10,35 +10,34 @@ interface LanguageOptionsStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: 'orange',
+    marginVertical: '3%',
+    alignItems: 'center',
+    padding: '5%'
+  },
+  actionText: {
+    color: 'orange',
+    fontSize: 20
+  }
+};
+
 const languageOptionsStyles: LanguageOptionsStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      backgroundColor: '#5f4001',
-      borderWidth: 1,
-      borderRadius: 8,
-      borderColor: 'orange',
-      marginVertical: '3%',
-      alignItems: 'center',
-      padding: '5%'
-    },
-    actionText: {
-      color: 'orange',
-      fontSize: 20
+      ...commonStyles.container,
+      backgroundColor: '#5f4001'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      backgroundColor: '#ffffff',
-      borderWidth: 1,
-      borderRadius: 8,
-      borderColor: 'orange',
-      marginVertical: '3%',
-      alignItems: 'center',
-      padding: '5%'
-    },
-    actionText: {
-      color: 'orange',
-      fontSize: 20
+      ...commonStyles.container,
+      backgroundColor: '#ffffff'
     }
   }
 };

@@ -19,105 +19,80 @@ interface CartItemStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    borderRadius: 10,
+    marginTop: '3%'
+  },
+  productContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  imageContainer: {
+    padding: '10%'
+  },
+  image: {
+    width: 50,
+    height: 50
+  },
+  textContainer: {
+    height: 50,
+    justifyContent: 'space-between'
+  },
+  productName: {},
+  price: {
+    fontWeight: 'bold'
+  },
+  amountContainer: {
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'orange',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginRight: '3%'
+  },
+  minus: {
+    margin: '2%'
+  },
+  amount: {
+    fontWeight: 'bold'
+  },
+  plus: {
+    margin: '2%'
+  }
+};
+
 const cartItemStyles: CartItemStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      backgroundColor: '#5f4001',
-      flexDirection: 'row',
-      borderRadius: 10,
-      marginTop: '3%'
-    },
-    productContainer: {
-      flexDirection: 'row',
-      alignItems: 'center'
-    },
-    imageContainer: {
-      padding: '10%'
-    },
-    image: {
-      width: 50,
-      height: 50
-    },
-    textContainer: {
-      height: 50,
-      justifyContent: 'space-between'
+      ...commonStyles.container,
+      backgroundColor: '#5f4001'
     },
     productName: {
       color: '#bb650b'
     },
     price: {
-      fontWeight: 'bold',
+      ...commonStyles.price,
       color: '#bb650b'
-    },
-    amountContainer: {
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: 'orange',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      marginRight: '3%'
-    },
-    minus: {
-      margin: '2%'
-    },
-    amount: {
-      fontWeight: 'bold'
-    },
-    plus: {
-      margin: '2%'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      backgroundColor: '#ffffff',
-      flexDirection: 'row',
-      borderRadius: 10,
-      marginTop: '3%'
-    },
-    productContainer: {
-      flexDirection: 'row',
-      alignItems: 'center'
-    },
-    imageContainer: {
-      padding: '10%'
-    },
-    image: {
-      width: 50,
-      height: 50
-    },
-    textContainer: {
-      height: 50,
-      justifyContent: 'space-between'
+      ...commonStyles.container,
+      backgroundColor: '#ffffff'
     },
     productName: {
       color: '#000000'
     },
     price: {
-      fontWeight: 'bold',
+      ...commonStyles.price,
       color: '#000000'
-    },
-    amountContainer: {
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: 'orange',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      marginRight: '3%'
-    },
-    minus: {
-      margin: '2%'
-    },
-    amount: {
-      fontWeight: 'bold'
-    },
-    plus: {
-      margin: '2%'
     }
   }
 };

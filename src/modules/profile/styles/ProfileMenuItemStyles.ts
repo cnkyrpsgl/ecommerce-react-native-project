@@ -11,40 +11,43 @@ interface ProfileMenuItemStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    justifyContent: 'center',
+    height: 60,
+    marginVertical: '5%',
+    borderRadius: 8
+  },
+  contentContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: '3%'
+  },
+  title: {
+    fontSize: 15
+  }
+};
+
 const profileMenuItemStyles: ProfileMenuItemStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      justifyContent: 'center',
-      height: 60,
-      marginVertical: '5%',
-      borderRadius: 8,
+      ...commonStyles.container,
       backgroundColor: '#5f4001'
     },
-    contentContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginHorizontal: '3%'
-    },
     title: {
-      fontSize: 15,
+      ...commonStyles.title,
       color: '#f08a5d'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      justifyContent: 'center',
-      height: 60,
-      marginVertical: '5%',
-      borderRadius: 8,
+      ...commonStyles.container,
       backgroundColor: '#ffffff'
     },
-    contentContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginHorizontal: '3%'
-    },
     title: {
-      fontSize: 15,
+      ...commonStyles.title,
       color: '#f08a5d'
     }
   }

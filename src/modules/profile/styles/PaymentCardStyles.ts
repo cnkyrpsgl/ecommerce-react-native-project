@@ -14,65 +14,49 @@ interface PaymentCardStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flexDirection: 'row',
+    padding: '3%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderRadius: 8
+  },
+  detailContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flex: 0.7
+  },
+  mastercard: {
+    width: 35,
+    height: 35
+  },
+  cardName: {
+    fontWeight: 'bold'
+  },
+  cardNumber: {
+    fontSize: 12,
+    opacity: 0.5
+  },
+  delete: {
+    color: 'orange'
+  }
+};
+
 const paymentCardStyles: PaymentCardStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      flexDirection: 'row',
-      backgroundColor: '#5f4001',
-      padding: '3%',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      borderRadius: 8
-    },
-    detailContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      flex: 0.7
-    },
-    mastercard: {
-      width: 35,
-      height: 35
-    },
-    cardName: {
-      fontWeight: 'bold'
-    },
-    cardNumber: {
-      fontSize: 12,
-      opacity: 0.5
-    },
-    delete: {
-      color: 'orange'
+      ...commonStyles.container,
+      backgroundColor: '#5f4001'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      flexDirection: 'row',
-      backgroundColor: '#ffffff',
-      padding: '3%',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      borderRadius: 8
-    },
-    detailContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      flex: 0.7
-    },
-    mastercard: {
-      width: 35,
-      height: 35
-    },
-    cardName: {
-      fontWeight: 'bold'
-    },
-    cardNumber: {
-      fontSize: 12,
-      opacity: 0.5
-    },
-    delete: {
-      color: 'orange'
+      ...commonStyles.container,
+      backgroundColor: '#ffffff'
     }
   }
 };

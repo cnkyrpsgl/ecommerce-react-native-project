@@ -11,35 +11,41 @@ interface AddressEditSceneStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flex: 1,
+    paddingHorizontal: '10%',
+    paddingTop: '5%'
+  },
+  textInput: {
+    marginVertical: '3%'
+  },
+  actionButtonContainer: {
+    marginVertical: '5%'
+  }
+};
+
 const addressEditSceneStyles: AddressEditSceneStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      backgroundColor: '#9e7009',
-      paddingHorizontal: '10%',
-      paddingTop: '5%'
+      ...commonStyles.container,
+      backgroundColor: '#9e7009'
     },
     textInput: {
-      marginVertical: '3%',
+      ...commonStyles.textInput,
       backgroundColor: '#5f4001'
-    },
-    actionButtonContainer: {
-      marginVertical: '5%'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      backgroundColor: '#f6f6f6',
-      paddingHorizontal: '10%',
-      paddingTop: '5%'
+      ...commonStyles.container,
+      backgroundColor: '#f6f6f6'
     },
     textInput: {
-      marginVertical: '3%',
+      ...commonStyles.textInput,
       backgroundColor: '#ffffff'
-    },
-    actionButtonContainer: {
-      marginVertical: '5%'
     }
   }
 };

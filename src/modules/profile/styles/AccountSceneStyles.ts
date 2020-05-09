@@ -12,39 +12,38 @@ interface AccountSceneStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {flex: 1},
+  formContainer: {
+    marginHorizontal: '10%',
+    flex: 0.8,
+    justifyContent: 'flex-start'
+  },
+  input: {
+    marginVertical: '5%'
+  },
+  actionContainer: {
+    flex: 0.4,
+    justifyContent: 'center',
+    marginHorizontal: '10%'
+  }
+};
+
 const accountSceneStyles: AccountSceneStyles = {
   dark: {
-    container: {flex: 1, backgroundColor: '#9e7009'},
-    formContainer: {
-      marginHorizontal: '10%',
-      flex: 0.8,
-      justifyContent: 'flex-start'
-    },
+    ...commonStyles,
+    container: {...commonStyles.container, backgroundColor: '#9e7009'},
     input: {
-      marginVertical: '5%',
+      ...commonStyles.input,
       backgroundColor: '#5f4001'
-    },
-    actionContainer: {
-      flex: 0.4,
-      justifyContent: 'center',
-      marginHorizontal: '10%'
     }
   },
   light: {
-    container: {flex: 1, backgroundColor: '#f6f6f6'},
-    formContainer: {
-      marginHorizontal: '10%',
-      flex: 0.8,
-      justifyContent: 'flex-start'
-    },
+    ...commonStyles,
+    container: {...commonStyles.container, backgroundColor: '#f6f6f6'},
     input: {
-      marginVertical: '5%',
+      ...commonStyles.input,
       backgroundColor: '#ffffff'
-    },
-    actionContainer: {
-      flex: 0.4,
-      justifyContent: 'center',
-      marginHorizontal: '10%'
     }
   }
 };

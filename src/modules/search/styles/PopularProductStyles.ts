@@ -10,25 +10,25 @@ interface PopularProductStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    borderWidth: 0.2,
+    borderRadius: 8,
+    padding: '8%',
+    borderColor: 'grey'
+  },
+  name: {}
+};
+
 const popularProductStyles: PopularProductStyles = {
   dark: {
-    container: {
-      borderWidth: 0.2,
-      borderRadius: 8,
-      padding: '8%',
-      borderColor: 'grey'
-    },
+    ...commonStyles,
     name: {
       color: '#e7134e'
     }
   },
   light: {
-    container: {
-      borderWidth: 0.2,
-      borderRadius: 8,
-      padding: '8%',
-      borderColor: 'grey'
-    },
+    ...commonStyles,
     name: {
       color: '#b83b5e'
     }

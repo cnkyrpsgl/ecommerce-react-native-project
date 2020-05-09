@@ -14,46 +14,44 @@ interface SearchBarStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  search: {
+    margin: '4%'
+  },
+  placeHolderColor: '',
+  iconColor: '',
+  microphone: {
+    margin: '2%'
+  }
+};
+
 const searchBarStyles: SearchBarStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      backgroundColor: '#5f4001',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    },
-    searchContainer: {
-      flexDirection: 'row',
-      alignItems: 'center'
-    },
-    search: {
-      margin: '4%'
+      ...commonStyles.container,
+      backgroundColor: '#5f4001'
     },
     placeHolderColor: '#FFA500',
-    iconColor: '#FFA500',
-    microphone: {
-      margin: '2%'
-    }
+    iconColor: '#FFA500'
   },
   light: {
+    ...commonStyles,
     container: {
-      backgroundColor: '#FFFFFF',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    },
-    searchContainer: {
-      flexDirection: 'row',
-      alignItems: 'center'
-    },
-    search: {
-      margin: '4%'
+      ...commonStyles.container,
+      backgroundColor: '#FFFFFF'
     },
     placeHolderColor: '#616060',
-    iconColor: '#FFA500',
-    microphone: {
-      margin: '2%'
-    }
+    iconColor: '#FFA500'
   }
 };
 

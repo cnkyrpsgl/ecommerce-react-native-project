@@ -12,39 +12,43 @@ interface PopularSearchStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    marginVertical: '5%'
+  },
+  title: {
+    marginHorizontal: '3%'
+  },
+  flatList: {
+    paddingVertical: '5%',
+    marginVertical: '3%'
+  },
+  contentContainer: {
+    marginHorizontal: '3%'
+  }
+};
+
 const popularSearchStyles: PopularSearchStyles = {
   dark: {
-    container: {
-      marginVertical: '5%'
-    },
+    ...commonStyles,
     title: {
-      color: '#52ef26',
-      marginHorizontal: '3%'
+      ...commonStyles.title,
+      color: '#52ef26'
     },
     flatList: {
-      backgroundColor: '#5f4001',
-      paddingVertical: '5%',
-      marginVertical: '3%'
-    },
-    contentContainer: {
-      marginHorizontal: '3%'
+      ...commonStyles.flatList,
+      backgroundColor: '#5f4001'
     }
   },
   light: {
-    container: {
-      marginVertical: '5%'
-    },
+    ...commonStyles,
     title: {
-      color: '#f08a5d',
-      marginHorizontal: '3%'
+      ...commonStyles.title,
+      color: '#f08a5d'
     },
     flatList: {
-      backgroundColor: 'white',
-      paddingVertical: '5%',
-      marginVertical: '3%'
-    },
-    contentContainer: {
-      marginHorizontal: '3%'
+      ...commonStyles.flatList,
+      backgroundColor: '#ffffff'
     }
   }
 };

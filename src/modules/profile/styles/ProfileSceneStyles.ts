@@ -10,27 +10,30 @@ interface ProfileSceneStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flex: 1,
+    paddingHorizontal: '10%'
+  },
+  contentContainer: {
+    justifyContent: 'center',
+    flex: 1
+  }
+};
+
 const profileSceneStyles: ProfileSceneStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      paddingHorizontal: '10%',
+      ...commonStyles.container,
       backgroundColor: '#9e7009'
-    },
-    contentContainer: {
-      justifyContent: 'center',
-      flex: 1
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      flex: 1,
-      paddingHorizontal: '10%',
+      ...commonStyles.container,
       backgroundColor: '#f6f6f6'
-    },
-    contentContainer: {
-      justifyContent: 'center',
-      flex: 1
     }
   }
 };
@@ -44,27 +47,30 @@ interface ModalStyles {
   light: selectedModalStyles;
 }
 
+const commonModalStyles: selectedModalStyles = {
+  container: {
+    flex: 1,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    margin: 0,
+    paddingHorizontal: '10%',
+    justifyContent: 'center'
+  }
+};
+
 export const modalStyles: ModalStyles = {
   dark: {
+    ...commonModalStyles,
     container: {
-      flex: 1,
-      backgroundColor: '#9e7009',
-      borderTopLeftRadius: 40,
-      borderTopRightRadius: 40,
-      margin: 0,
-      paddingHorizontal: '10%',
-      justifyContent: 'center'
+      ...commonModalStyles.container,
+      backgroundColor: '#9e7009'
     }
   },
   light: {
+    ...commonModalStyles,
     container: {
-      flex: 1,
-      backgroundColor: '#ffffff',
-      borderTopLeftRadius: 40,
-      borderTopRightRadius: 40,
-      margin: 0,
-      paddingHorizontal: '10%',
-      justifyContent: 'center'
+      ...commonModalStyles.container,
+      backgroundColor: '#ffffff'
     }
   }
 };

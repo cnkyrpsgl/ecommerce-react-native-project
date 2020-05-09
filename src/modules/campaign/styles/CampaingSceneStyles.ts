@@ -9,18 +9,23 @@ interface CampaingSceneStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    flex: 1,
+    padding: '4%'
+  }
+};
+
 const campaingSceneStyles: CampaingSceneStyles = {
   dark: {
     container: {
-      flex: 1,
-      padding: '4%',
+      ...commonStyles.container,
       backgroundColor: '#9e7009'
     }
   },
   light: {
     container: {
-      flex: 1,
-      padding: '4%',
+      ...commonStyles.container,
       backgroundColor: '#f6f6f6'
     }
   }

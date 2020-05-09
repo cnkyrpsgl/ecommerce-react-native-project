@@ -11,36 +11,40 @@ interface CategoryCardStyles {
   light: SelectedStyles;
 }
 
+const commonStyles: SelectedStyles = {
+  container: {
+    borderRadius: 8,
+    alignItems: 'center',
+    margin: '2%',
+    padding: '2%'
+  },
+  image: {
+    width: 90,
+    height: 80
+  },
+  categoryName: {}
+};
+
 const categoryCardStyles: CategoryCardStyles = {
   dark: {
+    ...commonStyles,
     container: {
-      borderRadius: 8,
-      backgroundColor: '#000000',
-      alignItems: 'center',
-      margin: '2%',
-      padding: '2%'
-    },
-    image: {
-      width: 90,
-      height: 80
+      ...commonStyles.container,
+      backgroundColor: '#000000'
     },
     categoryName: {
+      ...commonStyles.categoryName,
       color: '#FFFFFF'
     }
   },
   light: {
+    ...commonStyles,
     container: {
-      borderRadius: 8,
-      backgroundColor: '#FFFFFF',
-      alignItems: 'center',
-      margin: '2%',
-      padding: '2%'
-    },
-    image: {
-      width: 90,
-      height: 80
+      ...commonStyles.container,
+      backgroundColor: '#FFFFFF'
     },
     categoryName: {
+      ...commonStyles.categoryName,
       color: '#000000'
     }
   }
