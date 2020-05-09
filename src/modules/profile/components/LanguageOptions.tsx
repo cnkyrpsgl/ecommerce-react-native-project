@@ -7,23 +7,23 @@ import {useDarkModeContext} from 'react-native-dark-mode';
 const LanguageOptions = ({action}: {action: Function}) => {
   const {t, i18n} = useTranslation();
   const mode = useDarkModeContext();
+  const changeLanguage = (lang: string) =>
+    requestAnimationFrame(() => {
+      i18n.changeLanguage(lang).catch();
+      action();
+    });
+
   return (
     <>
       <TouchableOpacity
         key={'en'}
-        onPress={() => {
-          i18n.changeLanguage('en');
-          action();
-        }}
+        onPress={() => changeLanguage('en')}
         style={styles[mode].container}>
         <Text style={styles[mode].actionText}>{t('en')}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         key={'tr'}
-        onPress={() => {
-          i18n.changeLanguage('tr');
-          action();
-        }}
+        onPress={() => changeLanguage('tr')}
         style={styles[mode].container}>
         <Text style={styles[mode].actionText}>{t('tr')}</Text>
       </TouchableOpacity>
